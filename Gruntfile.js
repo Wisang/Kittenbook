@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
       concat: {
         release: {
-          src: ['js/values.js', 'js/prompt.js'],
+          src: ['js/values.js', 'js/prompt.js', 'js/getImages.js'],
           dest: 'release/main.js'
         }
       },
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         }
       },
       jshint: {
-        files: ['js/values.js', 'js/prompt.js']
+        files: ['js/values.js', 'js/prompt.js', 'js/getImages.js']
       },
       watch: {
         files: ['<%=jshint.files %>', 'manifest.json'],

@@ -17,3 +17,4 @@ document.body.innerHTML = '<h1>Hello, ' + userName + '!</h1>' +
 	'<p>' + projectName + ' ' + versionNumber + 
 	' accessed on: ' + currentTime + '<p>';
 // this comment is to check grunt watch
+var images = document.querySelectorAll('div.userContentWrapper img');
