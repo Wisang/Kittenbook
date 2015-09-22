@@ -11,3 +11,9 @@ var currentTime = currentDate.getFullYear() + '-' +  // Set year
                  currentDate.getHours() + ':' +      // Set hours (military time)
                  currentDate.getMinutes() + ':' +    // Set minutes
                  currentDate.getSeconds();   
+
+var kbValues = {
+	"projectName": 'kittenbook',
+	"versionNumber": versionNumber,
+	"currentTime": currentTime
+};
