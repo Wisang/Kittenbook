@@ -5,7 +5,7 @@
 	"version": "0.0.1",
 	"content_scripts": [
 		{
-			"matches": ["*://www.facebook.com/*"],
+			"matches": ["*://www.facebook.com/*", "*://twitter.com/*"],
 			"js": ["js/values.js", "js/prompt.js"]
 		}
 	]
