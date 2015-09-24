@@ -13,7 +13,15 @@ var currentTime = currentDate.getFullYear() + '-' +  // Set year
                  currentDate.getSeconds();   
 
 var kbValues = {
-	"projectName": 'kittenbook',
-	"versionNumber": versionNumber,
-	"currentTime": currentTime
+	projectName: 'kittenbook',
+	versionNumber: versionNumber,
+	currentTime: currentTime,
+   areaCodes: {
+    '408': 'Silicon Valley',
+    '702': 'Las Vegas',
+    '801': 'Northern Utah',
+    '765': 'West Lafayette',
+    '901': 'Memphis',
+    '507': 'Rochester, MN'
+  }
 };
