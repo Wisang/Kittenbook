@@ -4,3 +4,4 @@ if(true)
 console.log("testing true");
 if(false)
 console.log("testing false");
+// added to test merge
