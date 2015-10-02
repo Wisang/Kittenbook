@@ -31,7 +31,12 @@ var userName = prompt('Hello, what\'s your name?');
 // Get the user's phone number.
 var phoneNumber = prompt('Hello ' + userName + ', what\'s your phone number?');
 // Create the phone number pattern.
-var phoneNumberPattern = /(?:1-)?\(?\d{3}[\-\)]\d{3}-\d{4}/;
+var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
+
+var phoneMatches = phoneNumberPattern.exec(phoneNumber);
+
+var areaCode = phoneMatches[1];
+
 // Create a variable to store the output.
 var output = '<h1>Hello, ' + userName + '!</h1>';
 
@@ -40,7 +45,7 @@ if (phoneNumberPattern.test(phoneNumber)) {
 
   // Yes, the phone number is valid! Add the success message to the output.
   output = output + '<p>' + kbValues.projectName + ' ' + kbValues.versionNumber +
-           ' viewed on: ' + kbValues.currentTime + '</p>';
+           ' viewed on: ' + kbValues.currentTime + ' ' + 'from ' + kbValues.areaCodes[areaCode] + '</p>';
 
 } else {
   // No, the phone number is not valid. Tell the user about the problem.
