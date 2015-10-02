@@ -31,7 +31,7 @@ var userName = prompt('Hello, what\'s your name?');
 // Get the user's phone number.
 var phoneNumber = prompt('Hello ' + userName + ', what\'s your phone number?');
 // Create the phone number pattern.
-var phoneNumberPattern = /1?-?\(?\d{3}[\-\)]\d{3}-\d{4}/;
+var phoneNumberPattern = /(?:1-)?\(?\d{3}[\-\)]\d{3}-\d{4}/;
 // Create a variable to store the output.
 var output = '<h1>Hello, ' + userName + '!</h1>';
 
@@ -48,4 +48,5 @@ if (phoneNumberPattern.test(phoneNumber)) {
 }
 // Insert the output into the web page.
 document.body.innerHTML = output;
+
 var images = document.querySelectorAll('div.userContentWrapper img');
