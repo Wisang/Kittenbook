@@ -25,3 +25,7 @@ var kbValues = {
     '507': 'Rochester, MN'
   }
 };
+
+function getAreaCodes() {
+  return kbValues.areaCodes;
+}

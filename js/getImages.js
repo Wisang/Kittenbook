@@ -1,1 +1,3 @@
-var images = document.querySelectorAll('div.userContentWrapper img');
+function getImages() {
+	return document.querySelectorAll('div.userContentWrapper img');
+}

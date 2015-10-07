@@ -1,35 +1,38 @@
-// Get the user's name.
-var userName = prompt('Hello, what\'s your name?');
-// Get the user's phone number.
-var phoneNumber = prompt('Hello ' + userName + ', what\'s your phone number?');
-// Create the phone number pattern.
+function getUserName() {
+	var userName = prompt('Hello, what\'s your name?');
 
-
-var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
-
-var phoneMatches = phoneNumberPattern.exec(phoneNumber);
-
-var areaCode = phoneMatches[1];
-
-// Create a variable to store the output.
-var output = '<h1>Hello, ' + userName + '!</h1>';
-
-var images = document.querySelectorAll('div.userContentWrapper img');
-
-for(var i=0; i<images.length; i++)
-	console.log(images[i]);
-
-// Is the phone number valid?
-if (phoneNumberPattern.test(phoneNumber)) {
-
-  // Yes, the phone number is valid! Add the success message to the output.
-  output = output + '<p>' + kbValues.projectName + ' ' + kbValues.versionNumber +
-           ' viewed on: ' + kbValues.currentTime + ' ' + 'from ' + kbValues.areaCodes[areaCode] + '</p>';
-
-} else {
-  // No, the phone number is not valid. Tell the user about the problem.
-  output = output + '<h2>That phone number is invalid: ' + phoneNumber;
+	if(!userName) 
+		userName = prompt('invalid name, please enter again');
+	
+	return userName;	
 }
+
+function getPhoneNumber(userName) {
+  var phoneNumber = prompt('Hello ' + userName +', what\'s your phone number?');
+  if (!validatePhoneNumber(phoneNumber)) {
+    phoneNumber = prompt('Please enter a valid phone number.');
+  }
+  return phoneNumber;
+}
+
+function validatePhoneNumber(phoneNumber) {
+  return phoneNumber.match(/(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/);
+}
+
+function getLocation(phoneNumber) {
+  var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
+  var phoneMatches = phoneNumberPattern.exec(phoneNumber);
+  var areaCodes, areaCode, locationName;
+
+  if (phoneMatches) {
+    areaCode = phoneMatches[1];
+    areaCodes = getAreaCodes();
+    locationName = areaCodes[areaCode];
+  }
+
+  return locationName ? locationName : 'somewhere';
+}
+
 // Insert the output into the web page.
-// document.body.innerHTML = output;
+// document.body.innerHTML = output; // comment out to check it on the console
 
