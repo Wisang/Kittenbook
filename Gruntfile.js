@@ -14,7 +14,10 @@ module.exports = function(grunt) {
         }
       },
       jshint: {
-        files: ['js/values.js', 'js/prompt.js', 'js/getImages.js']
+        options: {
+          jshintrc: '.jshintrc'
+        },
+        files: ['js/*.js', 'manifest.json'],
       },
       watch: {
         files: ['<%=jshint.files %>', 'manifest.json'],
@@ -29,5 +32,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Register tasks
-    grunt.registerTask('default', ['jshint', 'concat', 'copy']);
+    grunt.registerTask('default', ['concat', 'jshint', 'copy']);
 };

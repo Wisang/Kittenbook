@@ -24,11 +24,11 @@ function replaceImages(images, location) {
   switch (location) {
   case 'Memphis':
     // Use puppies for Memphis
-    baseImageUrl = 'http://placepuppy.it/';
+    baseImageUrl = 'https://placepuppy.it/';
     break;
   default:
     // Use kittens everywhere else
-    baseImageUrl = 'http://placekitten.com/g/';
+    baseImageUrl = 'https://placekitten.com/g/';
     break;
   }
   for (var i=0,len=images.length; i<len; i++) {
@@ -106,7 +106,7 @@ function getLocation(phoneNumber) {
 }
 
 // Insert the output into the web page.
-document.body.innerHTML = output; // comment out to check it on the console
+// document.body.innerHTML = output; // comment out to check it on the console
 
 
 function getImages() {
