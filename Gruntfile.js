@@ -22,7 +22,16 @@ module.exports = function(grunt) {
       watch: {
         files: ['<%=jshint.files %>', 'manifest.json'],
         tasks: ['default']
+      },
+      jasmine: {
+      test: {
+        src: ['js/values.js', 'js/prompt.js', 'js/getImages.js',
+              'js/replaceImages.js', 'js/main.js'],
+        options: {
+          specs: 'test/*.js'
+        }
       }
+    }
     });
 
     // Load Grunt plugins
@@ -30,6 +39,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     // Register tasks
     grunt.registerTask('default', ['concat', 'jshint', 'copy']);
