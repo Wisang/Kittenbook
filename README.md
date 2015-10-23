@@ -8,5 +8,11 @@ Learning to program
 #Chapter 8 Functions and Methods
 ## Do One Thing Well
 함수는 한가지 일만 하고 그것을 잘해야 한다. naming이 쉬우면 함수를 잘 만든 것이다.
-## Divide and Conquer
+## Don't Repeat Yourself
+If you repeat, you are creating more work for yourself.
+
+##Self-Documenting Code
+code as plain english
+descriptive: self-documenting -> no documents necessary
+
 

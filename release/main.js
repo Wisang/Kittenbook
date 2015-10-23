@@ -11,6 +11,7 @@ setInterval(function() {
 }
 
 main();
+
 function getImageHeight(image) {
   return image.height;
 }
@@ -24,11 +25,11 @@ function replaceImages(images, location) {
   switch (location) {
   case 'Memphis':
     // Use puppies for Memphis
-    baseImageUrl = 'https://placepuppy.it/';
+    baseImageUrl = 'http://placepuppy.it/';
     break;
   default:
     // Use kittens everywhere else
-    baseImageUrl = 'https://placekitten.com/g/';
+    baseImageUrl = 'http://placekitten.com/g/';
     break;
   }
   for (var i=0,len=images.length; i<len; i++) {
@@ -106,7 +107,7 @@ function getLocation(phoneNumber) {
 }
 
 // Insert the output into the web page.
-// document.body.innerHTML = output; // comment out to check it on the console
+document.body.innerHTML = output; // comment out to check it on the console
 
 
 function getImages() {
